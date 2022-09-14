@@ -1,10 +1,14 @@
 #include "main.h"
 
 /**
- * print_alphabet
+ * main - Entry point
+ *
+ * Description: print_alphabet
+ *
+ * Return: Always 0 (success)
  */
 
-void ft_print_alphabet(void)
+void print_alphabet(void)
 {
 	int ch;
 
