@@ -3,6 +3,7 @@
 
 /**
  * _isupper - function that checks for alphabetic character
+ *
  * @c: return char type
  *
  * Return: return 0 on success and 1 on fail
