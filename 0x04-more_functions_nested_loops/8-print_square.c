@@ -4,7 +4,7 @@
  * print_square - Print a square with #.
  * @size: Is the size pf the square.
  *
- * Return: To the value of void..
+ * Return: To the value of void.
  */
 
 void print_square(int size)
@@ -26,6 +26,7 @@ void print_square(int size)
 				_putchar('#');
 			}
 			i++;
+			_putchar('\n');
 		}
 	}
 }
