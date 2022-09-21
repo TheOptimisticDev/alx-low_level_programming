@@ -9,7 +9,7 @@
  * Return: A point to the destination string @dest.
  */
 
-char *_strncat(char *dest, char *src)
+char *strncat(char *dest, const char *src)
 {
 	int index = 0, dest_len = 0;
 
@@ -19,5 +19,5 @@ char *_strncat(char *dest, char *src)
 	for (index = 0; src[index]; index++)
 		dest[dest_len++] = src[index];
 
-	return (0);
+	return (dest);
 }
