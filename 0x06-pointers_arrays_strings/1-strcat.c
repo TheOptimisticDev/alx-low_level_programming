@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strncat - Concatenates two strings using at most
@@ -10,7 +11,7 @@
  * Return: A pointer to the resulting string dest.
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n);
 {
 	int dlen = 0, j = 0;
 
