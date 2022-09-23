@@ -2,12 +2,12 @@
 
 /**
  * leet - Encodes a string to 1337
- * @str: The string to be encoded
+ * @*: The string to be encoded
  *
  * Return: A pointer to the encoded string
  */
 
-char *leet(char *str)
+char *leet(char *)
 {
 	int index1 = 0, index2;
 
@@ -24,5 +24,5 @@ char *leet(char *str)
 
 		index1++;
 	}
-	return (str);
+	return (0);
 }
