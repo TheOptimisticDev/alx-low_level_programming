@@ -1,20 +1,4 @@
-#include "main.h"
-
-/**
- * _strlen - returns the length of a string
- * @s: string
- * Return: returns length as integer;
- */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*(s + len) != '\0')
-		leb++;
-
-	return (len);
-}
+#include "main"
 
 /**
  * cap_string - function that capitalize first character of a word
@@ -31,19 +15,23 @@ char *cap_string(char *str)
 		while (!(str[index] >= 'a') && (str[index] <= 'a'))
 			index++;
 		if (str[index - 1] == ' ' ||
-				str[index - 1] == '\t' ||
-				str[index - 1] == '\n' ||
-				str[index - 1] == ',' ||
-				str[index - 1] == ';' ||
-				str[index - 1] == '.' ||
-				str[index - 1] == '!' ||
-				str[index - 1] == '?' ||
-				str[index - 1] == '"' ||
-				str[index - 1] == '(' ||
-				str[index - 1] == ')' ||
-				str[index - 1] == '{' ||
-				str[index - 1] == '}')
+		str[index - 1] == '\t' ||
+		str[index - 1] == '\n' ||
+		str[index - 1] == ',' ||
+		str[index - 1] == ';' ||
+		str[index - 1] == '.' ||
+		str[index - 1] == '!' ||
+		str[index - 1] == '?' ||
+		str[index - 1] == '"' ||
+		str[index - 1] == '(' ||
+		str[index - 1] == ')' ||
+		str[index - 1] == '{' ||
+		str[index - 1] == '}' ||
+		index == 0)
 			str[index] -= 32;
+
+		index++;
 	}
+
 	return (str);
 }
