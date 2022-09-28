@@ -3,8 +3,9 @@
 /**
  * factorial - returns factorial of n
  * @n: the number
- * Returns: 1, -1, or factorial
+ * Returns: 1, -1
  */
+
 int factorial(int n)
 {
 	if (n == 0)
