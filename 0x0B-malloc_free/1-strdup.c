@@ -20,6 +20,9 @@ char *_strdup(char *str)
 		len++;
 	cpy = malloc(sizeof(char) * (len + 1));
 
+	if (cpy == NULL)
+		return (NULL);
+
 	for (i = 0; str[i]; i++)
 	{
 		cpy[i] = str[i];
@@ -28,4 +31,5 @@ char *_strdup(char *str)
 	cpy[len] = '\0';
 
 	return (cpy);
+
 }
