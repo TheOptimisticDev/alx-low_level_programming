@@ -3,32 +3,35 @@
 
 /**
  * _strdup - malloc new str and copy *str into it
- * @str: the string we copy
- * Return: pointer to new string
+ * @str: the string to duplicate
+ *
+ * Return: the string duplicated
  */
 
 char *_strdup(char *str)
 {
-	unsigned int i;
-	int count = 0;
-	char *dest;
+	int a = 0, i = 1;
+	char *s;
 
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i]; i++)
+
+	while (str[i])
 	{
-		count++;
+		i++;
 	}
-	count += 1;
-	dest = malloc(count * sizeof(char));
-	if (dest == NULL)
-	{
+
+	s = malloc((sizeof(char) * i) + 1);
+
+	if (s == NULL)
 		return (NULL);
-	}
-	for (i = 0; str]i] != '\0'; i++)
+
+	while (a < i)
 	{
-		dest[i] = str[i];
+		s[a] = str[a];
+		a++;
 	}
-	dest[i] = str[i];
-	return (dest);
+
+	s[a] = '\0';
+	return (s);
 }
