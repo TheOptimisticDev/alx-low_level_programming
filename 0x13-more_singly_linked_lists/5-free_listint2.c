@@ -4,7 +4,7 @@
  * free_listint2 - A fuction to free listint_t list.
  * @head: A pointer to the address of the head of the listint_t list.
  *
- * Description: Setsthe head to NULL.
+ * Description: Sets the head to NULL.
  */
 
 void free_listint2(listint_t **head)
