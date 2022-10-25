@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -7,31 +5,31 @@
  * of list.
  * @head: A pointer
  * @n: Node data.
- * Return: head
+ *
+ * Return: NULL if the function fails. Otherwise - the address of the element.
  */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *endnode;
-	listint_t *newnode;
+	listint_t *newnode, *last;
 
 	newnode = malloc(sizeof(listint_t));
-	if (!newnode)
+	if (new == NULL)
 		return (NULL);
 
 	newnode->n = n;
 	newnode->next = NULL;
 
 	if (*head == NULL)
-	{
 		*head = newnode;
-		return (newnode);
+
+	else
+	{
+		last = *head;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
 	}
-	endnode = *head;
 
-	while (endnode->next != NULL)
-		endnode = endnode->next;
-	endnode->next = newnode;
-
-	return (newnode);
+	return (*head);
 }
