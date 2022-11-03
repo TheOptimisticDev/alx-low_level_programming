@@ -1,19 +1,21 @@
 #include "main.h"
 
 /**
- * clear_bit - clears the bit at the index
- * @n: the number to index
- * @index: the bit to clear
+ * clear_bit - set value to 1 with given index
+ * @n: pointer to unsigned int
+ * @index: unsigned int index
  *
  * Return: 1 if successful, -1 on error
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= sizeof(n) * 8)
+	unsigned int x = 1;
+
+	if (sizeof(n) * 8 < index)
 		return (-1);
 
-	if (*n & 1L << index)
-		*n ^= 1L << index;
+	x <<= index;
+	*n &= ~x;
 	return (1);
 }
