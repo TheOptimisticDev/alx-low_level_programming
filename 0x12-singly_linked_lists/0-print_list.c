@@ -7,17 +7,17 @@
 
 size_t print_list (const list_t *h)
 {
-	size_t nelem;
+	const list_t *cursor = h;
+	size_t count = 0;
 
-	nelem = 0;
-	while (h != NULL)
+	while (cursor != NULL)
 	{
-		if (h->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
+		if (cursor->str != NULL)
+			printf("[%d] %s\n", cursor->len, cursor->str);
 		else
-			printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
-		nelem++;
+			printf("[0] (nil)\n");
+		count += 1;cursor = cursor->next;
 	}
-	return (nelem);
+
+	return (count);
 }
