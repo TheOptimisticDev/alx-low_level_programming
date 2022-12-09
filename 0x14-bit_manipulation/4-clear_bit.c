@@ -1,5 +1,4 @@
-#include "main.h"
-#include <stddef.h>
+#include "holberton.h"
 
 /**
  * clear_bit - sets a bit at a position to 0
