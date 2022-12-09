@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * flip_bits - returns the number of bits you would need to flip
- * @n: unsigned long int
- * @m: unsigned long int
+ * flip_bits - gets the number of bits to flip to get from n to m
+ * @n: initial number
+ * @m: final number
  *
- * Return: number of bits you would need to flip
+ * Return: the number of flipped bits
  */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int diff = 0, changes = 0;
+	unsigned long int flipped = n ^ m;
+	int count = 0;
 
-	diff = n ^ m;
-	while (diff)
+	while (flipped)
 	{
-		if (diff & 1)
-			changes++;
-		diff = diff >> 1;
+		if (flipped & 1)
+			count++;
+		flipped  >>= 1;
 	}
-	return (changes);
+	return (count);
 }
