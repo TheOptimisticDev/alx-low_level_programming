@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc source.c -o opt
+gcc -Wall -fPIC -c *.c
