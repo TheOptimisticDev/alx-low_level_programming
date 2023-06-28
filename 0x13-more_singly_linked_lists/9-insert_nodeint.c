@@ -1,45 +1,49 @@
 #include "lists.h"
-
 /**
- * insert_nodeint_at_index - Inserts a new node to a listint_t
- * list at a given position.
- * @head: A pointer to the address of the head of the listint_t list.
- * @idx: The index of the listint_t list where the new node should be added
- * indices start at 0.
- * @n: The integer for the new node to contain.
- *
- * Return: If the function fails - NULL.
- * Otherwise - the address of the new node.
+ * insert_nodeint_at_index - inserts a new node at a given position
+ * @head: double pointer to the head of the listint list
+ * @idx: is the index of the list where the new node should be added
+ * @n: is the data
+ * Return: Null if it failed or the address of the new node
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint *new, *copy = *head;
-	unsigned int node;
+	listint_t *headaux;
+	listint_t *newnode;
+	unsigned int size;
 
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	size = 0;
+	/* allocate memory for the newnode */
+	newnode = malloc(sizeof(listint_t));
+	/* task condition */
+	if (newnode == NULL)
 		return (NULL);
-
-	new->n = n;
-
+	/* n keeps being the data of the new node */
+	newnode->n = n;
+	/*  given the case, if index is cero then newnode is equal to head */
+	/* and return newnode in head of the list */
 	if (idx == 0)
 	{
-		new->next = copy;
-		*head = new;
-		return (new);
+		newnode->next = *head;
+		*head = newnode;
+		return (newnode);
 	}
-
-	for (node = 0; node < (idx - 1); node++)
+	/* usea de auxiliar */
+	headaux = *head;
+	/* if index is different to the position */
+	/* counter size keeps running and headaux moves to the next node */
+	while (headaux != NULL && size != idx - 1)
 	{
-		if (copy == NULL || copy->next == NULL)
-			return (NULL);
-
-		copy = copy->next;
+		size++;
+		headaux = headaux->next;
 	}
-
-	new->next = copy->next;
-	copy->next = new;
-
-	return (new);
+	/* if index and size are equal and non NULL */
+	if (size == idx - 1 && headaux != NULL)
+	{
+		newnode->next = headaux->next;
+		headaux->next = newnode;
+		return (newnode);
+	}
+	free(newnode);
+	return (NULL);
 }
