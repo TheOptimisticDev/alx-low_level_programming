@@ -46,5 +46,5 @@ The C files for each task can be found in the '0x01-variables_if_else_while' dir
 
 ## Authors
 
-This project was completed by [Mfumu Mabunda], student at ALX School.
+This project was completed by Mfumu Mabunda, student at ALX School.
 
